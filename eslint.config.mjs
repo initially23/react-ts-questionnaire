@@ -7,7 +7,7 @@ import eslintConfigPrettier from "eslint-config-prettier";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["**/*.{js,mjs,ts,jsx,tsx}"],
     languageOptions: {
       globals: globals.browser,
     },
@@ -17,7 +17,19 @@ export default [
       },
     },
     rules: {
-      // 禁用 @typescript-eslint/triple-slash-reference 规则
+      "@typescript-eslint/triple-slash-reference": "off",
+    },
+  },
+  {
+    // 为 .cjs 文件单独定义 CommonJS 环境
+    files: ["**/*.cjs"],
+    languageOptions: {
+      globals: globals.node, // Node.js 环境全局变量
+    },
+    env: {
+      commonjs: true, // 启用 CommonJS 环境
+    },
+    rules: {
       "@typescript-eslint/triple-slash-reference": "off",
     },
   },
