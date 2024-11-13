@@ -13,6 +13,7 @@ const ManageLayoutWrapper = styled.div`
   .right {
     flex: 1;
     margin-left: 3.75rem;
+    overflow: auto;
   }
 `;
 

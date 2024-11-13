@@ -1,16 +1,23 @@
 import React from "react";
 import type { FC } from "react";
 import { Outlet } from "react-router-dom";
+import { Layout } from "antd";
+import { MainLayoutWrapper } from "./MainLayout.Wrapper";
+import Logo from "@/components/Logo/Logo";
+
+const { Header, Content, Footer } = Layout;
 
 const MainLayout: FC = () => {
   return (
-    <>
-      <header>MainLayout Header</header>
-      <main>
+    <MainLayoutWrapper>
+      <Header className="MainLayoutHeader">
+        <Logo />
+      </Header>
+      <Content className="MainLayoutContent">
         <Outlet />
-      </main>
-      <footer>MainLayout Footer</footer>
-    </>
+      </Content>
+      <Footer className="MainLayoutFooter">小慕问卷-在线免费的问卷平台</Footer>
+    </MainLayoutWrapper>
   );
 };
 
