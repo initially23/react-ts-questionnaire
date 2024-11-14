@@ -5,6 +5,7 @@ import QuestionCard from "@/components/QuestionCard/QuestionCard";
 import { useSearchParams } from "react-router-dom";
 import { Typography } from "antd";
 import { useTitle } from "ahooks";
+import ListSearch from "@/components/ListSearch/ListSearch";
 
 const { Title } = Typography;
 
@@ -54,7 +55,10 @@ const List: FC = () => {
 
   return (
     <ListWrapper>
-      <Title>我的问卷</Title>
+      <div className="listHeader">
+        <Title>我的问卷</Title>
+        <ListSearch />
+      </div>
       <section className="listItem">
         {questionList.length > 0 &&
           questionList.map((item) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import type { FC } from "react";
 import { StartWrapper } from "./Start.Wrapper";
-import { Typography } from "antd";
+import { Typography, Empty } from "antd";
 import QuestionCard from "@/components/QuestionCard/QuestionCard";
 
 const { Title } = Typography;
@@ -16,7 +16,6 @@ const ManageStart: FC = () => {
       answerCount: 5,
       createAt: "11月11日 12:51",
     },
-
     {
       _id: "q2",
       title: "问卷2",
@@ -29,8 +28,9 @@ const ManageStart: FC = () => {
 
   return (
     <StartWrapper>
-      <Title>我的问卷</Title>
+      <Title>星标问卷</Title>
       <section className="listItem">
+        {ManageStartList.length === 0 && <Empty description="暂无数据" />}
         {ManageStartList.length > 0 &&
           ManageStartList.map((item) => {
             const { _id } = item;

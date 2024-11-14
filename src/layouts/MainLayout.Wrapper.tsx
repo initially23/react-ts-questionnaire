@@ -20,6 +20,7 @@ const MainLayoutWrapper = styled.div`
     justify-content: center;
     align-items: center;
     color: #333;
+    background-color: #fff;
   }
 `;
 
